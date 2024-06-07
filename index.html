@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Document</title>
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font-Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- header Section -->
+    <header>
+        <!-- Navigation Bar -->
+        <div class="nav container">
+            <a href="#" class="logo"><i class='bx bx-shopping-bag'></i><span>Boutique</span> Du Marché</a>
+            <div class="badge-label">
+                <i class='bx bx-cart' id="cart-icon"></i>
+                <span class='badge' id='lblCartCount'>0</span>  <!-- This is the badge -->
+            </div>
+            
+            
+            <!-- Cart Section -->
+            <div class="cart">
+                <div class="cart-title">Your Cart</div>
+                <!-- Content -->
+                <div class="cart-content" id="cart-content">  
+                </div>
+                <!-- Total Section -->
+                <div class="total" id="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price" id="total-price">$0</div>
+                </div>
+                <!-- Buy Button -->
+                <button type="button" class="btn-buy">Buy Now</button>
+                <!-- Cart Closing  -->
+                <i class='bx bx-x' id="cart-close"></i>
+            </div>
+        </div>
+
+    </header>
+    <!-- Shopping Section -->
+    <section>
+        <h2 class="section-title">Shop Products</h2>
+        <!-- Main -->
+        <div class="shop-content">
+            <!-- Item 1 -->
+            <div class="product-box">
+                <img src="./Images/pexels-wallace-chuck-3261069.jpg" alt="" class="product-img">
+                <h2 class="product-title">Nike Shoes</h2>
+                <span>
+                    <i id="icon1" onclick="likeBtn1()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$799.99</span>
+                <i class='bx bx-shopping-bag add-cart' onclick="cart.addItems(new Product(1, 'Nike Shoes', 799.99), 1); cart.displayCartItems();"></i>
+               
+            </div>
+            <!-- Item 2 -->
+            <div class="product-box">
+                <img src="./Images/pexels-coppertist-wu-16030484.jpg" alt="" class="product-img">
+                <h2 class="product-title">Ancient KeyHolder</h2>
+                <span>
+                    <i id="icon2" onclick="likeBtn2()" class='bx bxs-heart love'></i>
+                </span><br>
+                <span class="product-price">$2999.99</span>
+                <i class='bx bx-shopping-bag add-cart' onclick="cart.addItems(new Product(2, 'Ancient KeyHolder', 2999.99), 1); cart.displayCartItems();"></i>
+                     
+            </div> 
+             <!-- Item 3 -->
+             <div class="product-box">
+                <img src="./Images/pexels-luis-quintero-3731256.jpg" alt="" class="product-img">
+                <h2 class="product-title">Versace BackPack</h2>
+                <span>
+                    <i id="icon3" onclick="likeBtn3()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$3999.990</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                        
+            </div>
+            <!-- Item 4 -->
+            <div class="product-box">
+                <img src="./Images/pexels-ron-lach-7900665.jpg" alt="" class="product-img">
+                <h2 class="product-title">Metal Bottle</h2>
+                <span>
+                    <i id="icon4" onclick="likeBtn4()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$499.99</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                         
+            </div>
+            <!-- Item 5 -->
+            <div class="product-box">
+                <img src="./Images/pexels-mearlywan-16378444.jpg" alt="" class="product-img">
+                <h2 class="product-title">Body Wash</h2>
+                <span>
+                    <i id="icon5" onclick="likeBtn5()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$350.99</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                        
+            </div>
+            <!-- Item 6 -->
+            <div class="product-box">
+                <img src="./Images/varun-gaba-dcgB3CgidlU-unsplash.jpg" alt="" class="product-img">
+                <h2 class="product-title">Nikon Camera</h2>
+                <span>
+                    <i id="icon6" onclick="likeBtn6()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$3900.89</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                         
+            </div>
+              <!-- Item 7 -->
+              <div class="product-box">
+                <img src="./Images/tomasz-gawlowski-YDZPdqv3FcA-unsplash.jpg" alt="" class="product-img">
+                <h2 class="product-title">HeadSets</h2>
+                <span>
+                    <i id="icon7" onclick="likeBtn7()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$3500.89</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                          
+            </div>
+             <!-- Item 8 -->
+             <div class="product-box">
+                <img src="./Images/john-torcasio-TJrkkhdB39E-unsplash.jpg" alt="" class="product-img">
+                <h2 class="product-title">Rolex Wristwatch</h2>
+                <span>
+                    <i id="icon8" onclick="likeBtn8()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$390000.89</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                          
+            </div>
+               <!-- Item 9-->
+               <div class="product-box">
+                <img src="./Images/giorgio-trovato-K62u25Jk6vo-unsplash.jpg" alt="" class="product-img">
+                <h2 class="product-title">Ralph Lauren Sunglasses</h2>
+                <span>
+                    <i id="icon9" onclick="likeBtn9()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$8900.89</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                         
+            </div>
+            <!-- Item 10 -->
+            <div class="product-box">
+                <img src="./Images/sai-abhinivesh-burla-zRTe1gTQk34-unsplash.jpg" alt="" class="product-img">
+                <h2 class="product-title">Earpods</h2>
+                <span>
+                    <i id="icon10" onclick="likeBtn10()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$3900.89</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                          
+            </div>
+             <!-- Item 11 -->
+             <div class="product-box">
+                <img src="./Images/jakob-owens-O_bhy3TnSYU-unsplash.jpg" alt="" class="product-img">
+                <h2 class="product-title">Adventure Travel-pack</h2>
+                <span>
+                    <i id="icon11" onclick="likeBtn11()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$3900.89</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                         
+            </div>
+             <!-- Item 12 -->
+             <div class="product-box">
+                <img src="./Images/andrew-pons-cLHPacdtpSY-unsplash.jpg" alt="" class="product-img">
+                <h2 class="product-title">Suzuki PowerBike</h2>
+                <span>
+                    <i id="icon12" onclick="likeBtn12()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$69000.89</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                          
+            </div>
+             <!-- Item 13 -->
+             <div class="product-box">
+                <img src="./Images/kaleb-tapp-8q19GH2I88s-unsplash.jpg" alt="" class="product-img">
+                <h2 class="product-title">Jenuin GrapeJuice Drink </h2>
+                <span>
+                    <i id="icon12" onclick="likeBtn12()" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$690.89</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                          
+            </div>
+             <!-- Item 14-->
+             <div class="product-box">
+                <img src="./Images/pat-taylor-12V36G17IbQ-unsplash.jpg" alt="" class="product-img">
+                <h2 class="product-title">Patek Wristwatch</h2>
+                <span>
+                    <i id="icon12" onclick="" class='bx bxs-heart love' ></i>
+                </span><br>
+                <span class="product-price">$9000.89</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+                          
+            </div>
+    </section> 
+    <script src="script1.js"></script>
+</body>
+</html>
